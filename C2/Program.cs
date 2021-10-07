@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace C2
 {
-    class Person
+    class Person : IComparable<Person>
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -12,6 +13,11 @@ namespace C2
         {
             Name = name;
             Age = age;
+        }
+
+        public int CompareTo(Person other)
+        {
+            return other.Age - Age;
         }
     }
 
@@ -37,6 +43,13 @@ namespace C2
             };
 
             Array.Sort(persons, new AgeComparer());
+
+            foreach (var person in persons)
+                Console.WriteLine($"{person.Name} - {person.Age}");
+
+            Console.WriteLine();
+
+            Array.Sort(persons);
 
             foreach (var person in persons)
                 Console.WriteLine($"{person.Name} - {person.Age}");
