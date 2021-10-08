@@ -6,12 +6,12 @@ namespace Workers
 {
     class HiredWorker : Worker
     {
-        int hour;
+        int hourlyPayment;
 
-        public HiredWorker(string name, int hour) : base(name)
+        public HiredWorker(string name, int hourlyPayment) : base(name)
         {
-            this.hour = hour;
-            salary = 20.8 * 8 * hour;
+            this.hourlyPayment = hourlyPayment;
+            salary = 20.8 * 8 * hourlyPayment;
         }
     }
 }

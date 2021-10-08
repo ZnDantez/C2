@@ -15,12 +15,11 @@ namespace Workers
             set { salary = value; }
         }
 
-        static List<Worker> workers;
+        public static List<Worker> workers = new List<Worker>();
 
         public Worker(string name)
         {
             this.name = name;
-            workers.Add(this);
         }
 
         public static void ShowWorkers()

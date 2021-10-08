@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Workers
 {
-    class FixedPayment : Worker
+    class FixedPaymentWorker : Worker
     {
-        public FixedPayment(string name) : base(name)
+        public FixedPaymentWorker(string name) : base(name)
         {
             salary = 10000;
         }
